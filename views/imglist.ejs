@@ -1,0 +1,28 @@
+<% if (name=='getImgFile') {%>
+    <link rel="stylesheet" media="screen" type="text/css" href="/js/zoomimage/css/zoomimage.css" />
+    <div class="filePath"><a  data-name="<%=secondPath%>">返回上一级</a></div>
+    <div class="imgFiles" data-path="<%=filePath%>">
+        <% for (var i=0;i<imgFiles.length;i++){%>
+            <a class="preimg" href="<%=encodeURI(imgFiles[i])%>" title="photo<%=i%>" >
+                <img id="img<%=i%>" data-path="<%=encodeURI(imgFiles[i])%>" src="<%=encodeURI(imgFiles[i])+"?" +Math.random() %>"/>
+            </a>
+            <span class="glyphicon glyphicon-remove-circle delete"></span>
+        <%}%>
+        <%if(imgFiles.length<10){%>
+            <span class="uploadImg">
+                <input type="file" id="pestImg" name="pestImg"  accept=" image/jpeg," data-container="body" data-toggle="popover" data-content="请选择病虫害图片" data-placement='top'>
+                <button type="button" class="btn btn-primary " id="addSumit">上传文件</button>
+            </span>
+        <%}%>
+    </div>
+    <div class="progress">
+        <div class="progress-bar" role="progressbar" aria-valuenow="0%" aria-valuemin="0" aria-valuemax="100">
+            <span class="sr-only">Complete!</span>
+        </div>
+    </div>
+    <script type="text/javascript" src="/js/zoomimage/js/jquery.js"></script>
+    <script type="text/javascript" src="/js/zoomimage/js/eye.js"></script>
+    <script type="text/javascript" src="/js/zoomimage/js/utils.js"></script>
+    <script type="text/javascript" src="/js/zoomimage/js/zoomimage.js"></script>
+    <script type="text/javascript" src="/js/imglist.js"></script>
+<%}%>

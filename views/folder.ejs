@@ -1,0 +1,16 @@
+<!-- <button type="button" class="btn btn-lg btn-danger" id="pop" data-toggle="popover" title="Popover title" data-content="And here's some amazing content. It's very engaging. Right?">Click to toggle popover</button> -->
+<div class=" folder">
+    <% if (name=='getSecond') {%>
+        <div class="secondPath"><a>返回上一级</a></div>
+    <%}%>
+    <div <%if(name=='getSecond'){%>class="secondlist"<%}%> class="firstlist">
+        <ul>
+            <% for(var i=0;i<folderName.length;i++){%>
+                <li><span class="glyphicon glyphicon-folder-open"></span>
+                    <a data-name="<%=folderPath[i]%>"><%=folderName[i]%></a>
+                </li>
+            <%}%>
+        </ul>
+    </div>
+</div>
+<script type="text/javascript" src="/js/folder.js"></script>
